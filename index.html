@@ -5,21 +5,111 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Famous Seamus Lights</title>
   <style>
-    body { font-family: Arial, sans-serif; background:#0a0a0a; color:#f5f5f5; margin:0; line-height:1.6; scroll-behavior:smooth; }
-    header { background:#ffd54f; color:#111; padding:2rem 1rem; text-align:center; }
-    nav { background:#222; padding:0.7rem; text-align:center; position:sticky; top:0; }
-    nav a { color:#ffd54f; margin:0 1rem; text-decoration:none; font-weight:bold; }
-    nav a:hover { text-decoration:underline; }
-    section { max-width:900px; margin:3rem auto; padding:1rem; text-align:center; }
-    h2 { color:#ffd54f; margin-bottom:1rem; }
-    footer { text-align:center; padding:2rem 1rem; background:#111; color:#aaa; font-size:0.9rem; }
+    body {
+      font-family: Arial, sans-serif;
+      background: #0a0a0a;
+      color: #f5f5f5;
+      margin: 0;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      background: #ffd54f;
+      color: #111;
+      padding: 2rem 1rem;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin: 0;
+      text-shadow: 0 0 8px rgba(255, 213, 79, 0.6);
+    }
+
+    header p {
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+      font-style: italic;
+    }
+
+    nav {
+      background: #222;
+      padding: 0.7rem;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: #ffd54f;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    section {
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    h2 {
+      color: #ffd54f;
+      margin-bottom: 1rem;
+    }
+
+    .price-box {
+      background: #222;
+      border: 2px solid #ffd54f;
+      border-radius: 8px;
+      padding: 1rem;
+      margin: 2rem auto;
+      max-width: 400px;
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: #ffd54f;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: #ffd54f;
+      color: #111;
+      padding: 0.8rem 1.5rem;
+      margin-top: 1rem;
+      font-size: 1rem;
+      font-weight: bold;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background: #e6c200;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: #111;
+      color: #aaa;
+      font-size: 0.9rem;
+      margin-top: 2rem;
+    }
   </style>
 </head>
 <body>
 
   <header>
     <h1>Famous Seamus Lights</h1>
-    <p>Handcrafted Mason-Jar Fairy-Light Creations ✨</p>
+    <p>Handcrafted Mason-Jar Fairy-Light Creations</p>
   </header>
 
   <nav>
@@ -31,25 +121,31 @@
   <section id="home">
     <h2>Welcome</h2>
     <p>Every glowing jar is handmade by Seamus to bring light, warmth, and joy to your home.</p>
-    <p>Each jar is available for just <strong>$20</strong>. 💡</p>
-    <p><strong>All proceeds</strong> are donated to the Lions Club to help provide assistive technology for people who are visually impaired. 💛</p>
+    
+    <div class="price-box">
+      Each jar is $20
+    </div>
+
+    <p>All proceeds are donated to the Lions Club to help provide assistive technology for people who are visually impaired.</p>
+    
+    <a href="tel:+13039175687" class="cta-button">Order Now</a>
   </section>
 
   <section id="about">
     <h2>About Us</h2>
     <p>Seamus creates handcrafted jars with fairy lights, turning ordinary glass into something magical.</p>
-    <p>Every jar sold supports the <strong>Lions Club</strong>, helping fund assistive technology for visually impaired individuals.</p>
+    <p>Every jar sold supports the Lions Club, helping fund assistive technology for visually impaired individuals.</p>
     <p>Buying a light means you’re making someone’s world brighter — literally and figuratively.</p>
   </section>
 
   <section id="contact">
     <h2>Contact</h2>
-    <p>📞 Call or Text: <a href="tel:+13039175687" style="color:#ffd54f">(303) 917-5687</a></p>
-    <p>💬 Ask about custom designs or bulk orders!</p>
+    <p>Call or Text Seamus at: <a href="tel:+13039175687" style="color:#ffd54f">(303) 917-5687</a></p>
+    <p>Ask about custom designs or bulk orders.</p>
   </section>
 
   <footer>
-    © 2025 Famous Seamus Lights • Handcrafted with heart and a touch of glow ✨
+    © 2025 Famous Seamus Lights • Handcrafted with heart and a touch of glow
   </footer>
 
 </body>
