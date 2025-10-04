@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Famous Seamus Lights</title>
   <style>
-    /* ===== Base Styling ===== */
     :root {
       --gold: #ffd54f;
       --amber: #ffb300;
@@ -130,7 +129,6 @@
       margin: 0.3rem 0;
     }
 
-    /* Accent line under sections */
     .accent-line {
       width: 60px;
       height: 4px;
@@ -186,5 +184,19 @@
     <p>Handcrafted with heart and a touch of glow</p>
   </footer>
 
+  <!-- 🧠 Fix: Prevent auto-jump to anchors on refresh -->
+  <script>
+    window.addEventListener('load', function() {
+      if (window.location.hash) {
+        // Temporarily remove the hash, scroll to top, then restore it
+        const hash = window.location.hash;
+        history.replaceState(null, null, ' ');
+        window.scrollTo({ top: 0, behavior: 'instant' });
+        setTimeout(() => history.replaceState(null, null, hash), 100);
+      } else {
+        window.scrollTo({ top: 0, behavior: 'instant' });
+      }
+    });
+  </script>
 </body>
 </html>
