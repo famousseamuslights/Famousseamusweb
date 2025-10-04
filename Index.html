@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Famous Seamus Lights</title>
+  <style>
+    /* --- BASIC STYLING --- */
+    body {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      background: radial-gradient(circle at top left, #1a1a1a, #0a0a0a);
+      color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+
+    /* --- HEADER --- */
+    header {
+      background: #ffd54f;
+      color: #111;
+      text-align: center;
+      padding: 3rem 1rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      margin: 0;
+      letter-spacing: 1px;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      font-style: italic;
+      margin-top: 0.5rem;
+    }
+
+    /* --- MAIN CONTENT --- */
+    main {
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 0 1rem;
+      text-align: center;
+    }
+
+    main h2 {
+      color: #ffd54f;
+      margin-bottom: 0.5rem;
+    }
+
+    .intro {
+      font-size: 1.15rem;
+      margin-bottom: 2rem;
+    }
+
+    /* --- GALLERY --- */
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .jar {
+      width: 250px;
+      height: 250px;
+      border-radius: 12px;
+      border: 2px solid #ffd54f;
+      background: rgba(255,255,255,0.05);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-style: italic;
+      font-size: 1.1rem;
+      transition: transform 0.2s ease;
+    }
+
+    .jar:hover {
+      transform: scale(1.05);
+    }
+
+    /* --- CONTACT SECTION --- */
+    section.contact {
+      background: #111;
+      border-top: 3px solid #ffd54f;
+      padding: 3rem 1rem;
+      text-align: center;
+    }
+
+    .contact h2 {
+      color: #ffd54f;
+      margin-bottom: 1rem;
+    }
+
+    a {
+      color: #ffd54f;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* --- FOOTER --- */
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #aaa;
+      padding: 1rem 0 2rem 0;
+    }
+
+    /* --- MOBILE RESPONSIVE --- */
+    @media (max-width: 600px) {
+      header h1 { font-size: 2rem; }
+      .jar { width: 180px; height: 180px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Famous Seamus Lights</h1>
+    <p>Handcrafted Mason-Jar Fairy-Light Creations ✨</p>
+  </header>
+
+  <main>
+    <h2>About Us</h2>
+    <p class="intro">
+      Welcome to <strong>Famous Seamus Lights</strong> — where every glowing jar is handmade by Seamus himself.
+      These magical glass creations bring warmth, light, and joy to any space.
+    </p>
+
+    <p>
+      Every penny earned goes straight to the <strong>Lions Club</strong>,
+      helping provide assistive technology to people who are visually impaired.
+      Your purchase doesn’t just brighten your home — it brightens someone’s world. 💛
+    </p>
+
+    <div class="gallery">
+      <div class="jar">✨ Jar Photo 1</div>
+      <div class="jar">💡 Jar Photo 2</div>
+      <div class="jar">🌟 Jar Photo 3</div>
+    </div>
+  </main>
+
+  <section class="contact">
+    <h2>Contact Seamus</h2>
+    <p>📞 Call or Text: <a href="tel:+13039175687">(303) 917-5687</a></p>
+    <p>💬 Ask about custom designs or bulk orders!</p>
+  </section>
+
+  <footer>
+    © 2025 Famous Seamus Lights • Handcrafted with heart and a touch of glow ✨
+  </footer>
+
+</body>
+</html>
