@@ -100,6 +100,28 @@
       box-shadow: 0 4px 12px rgba(255, 213, 79, 0.3);
     }
 
+    .addon {
+      display: inline-block;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--aqua);
+      color: var(--aqua);
+      padding: 0.6rem 1.2rem;
+      border-radius: 6px;
+      margin-top: 0.5rem;
+      font-size: 0.95rem;
+    }
+
+    .notice {
+      background: rgba(255, 255, 255, 0.05);
+      border-left: 4px solid var(--aqua);
+      padding: 1rem;
+      margin: 1.5rem auto;
+      max-width: 600px;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      color: #ccc;
+    }
+
     .cta-button {
       display: inline-block;
       background: linear-gradient(45deg, var(--aqua), var(--violet));
@@ -156,27 +178,41 @@
     <div class="accent-line"></div>
     <p>Every glowing jar is handmade by Seamus to bring warmth and beauty to any room. Each piece is designed with care, built to last, and perfect for any home, gift, or event.</p>
 
-    <div class="price-box">Each Jar is $20</div>
+    <div class="price-box">Each Jar is $25</div>
+    <div class="addon">Optional Hanging Add-On: +$10</div>
+
+    <p>Choose between elegant <strong>white jars</strong> for a classic look or vibrant <strong>multicolored jars</strong> for a lively glow. Both styles use high-quality fairy lights for a warm and inviting atmosphere.</p>
+
+    <div class="notice">
+      <strong>Please Note:</strong> At this time, <strong>shipping is not available</strong>.  
+      Orders can be placed for local pickup or arranged directly with Seamus.
+    </div>
 
     <p>All proceeds are donated to the Lions Club to help provide assistive technology for people who are visually impaired.</p>
 
-    <a href="tel:+13039175687" class="cta-button">Order by Phone</a>
-    <a href="mailto:famousseamuslights@gmail.com?subject=Jar%20Order%20Inquiry&body=Hi%20Seamus,%0A%0AI'd%20like%20to%20order%20a%20jar%20($20%20each).%20Here%20are%20my%20details:%0A%0A-%20Quantity:%0A-%20Any%20custom%20notes:%0A%0AThanks!" class="cta-button">Order by Email</a>
+    <a href="tel:+13033497092" class="cta-button">Order by Phone</a>
+    <a href="mailto:famousseamuslights@gmail.com?subject=Jar%20Order%20Inquiry&body=Hi%20Seamus,%0A%0AI'd%20like%20to%20order%20a%20jar%20($25%20each).%0AOptional%20Hanging%20Add-On:%20+$10%20each%0A%0AOptions:%20White%20or%20Multicolored%0AQuantity:%0A%0AThanks!" class="cta-button">Order by Email</a>
   </section>
 
   <section id="about">
     <h2>About Us</h2>
     <div class="accent-line"></div>
     <p>At Famous Seamus Lights, we believe in spreading brightness — both literally and figuratively. Each jar is handcrafted with precision and creativity, combining art and purpose.</p>
+    <p>We offer both <strong>white-light jars</strong> and <strong>multicolored-light jars</strong>. Each costs <strong>$25</strong>, with an optional <strong>hanging add-on for an extra $10</strong> if you’d like to display them suspended for decoration.</p>
     <p>Every purchase supports the Lions Club’s mission to empower visually impaired individuals through technology and accessibility tools.</p>
   </section>
 
   <section id="contact">
     <h2>Contact</h2>
     <div class="accent-line"></div>
-    <p><strong>Call or Text:</strong> <a href="tel:+13039175687" style="color: var(--aqua);">(303) 917-5687</a></p>
+    <p><strong>Call or Text:</strong> <a href="tel:+13033497092" style="color: var(--aqua);">(303) 349-7092</a></p>
     <p><strong>Email:</strong> <a href="mailto:famousseamuslights@gmail.com" style="color: var(--aqua);">famousseamuslights@gmail.com</a></p>
-    <p>Ask about custom designs or bulk orders.</p>
+    <p>Ask about custom designs, bulk orders, or jar color options.</p>
+
+    <div class="notice">
+      <strong>Note:</strong> Shipping is currently unavailable.  
+      Please contact Seamus to arrange a local pickup.
+    </div>
   </section>
 
   <footer>
@@ -184,11 +220,10 @@
     <p>Handcrafted with heart and a touch of glow</p>
   </footer>
 
-  <!-- 🧠 Fix: Prevent auto-jump to anchors on refresh -->
+  <!-- Fix: Prevent auto-jump to anchors on refresh -->
   <script>
     window.addEventListener('load', function() {
       if (window.location.hash) {
-        // Temporarily remove the hash, scroll to top, then restore it
         const hash = window.location.hash;
         history.replaceState(null, null, ' ');
         window.scrollTo({ top: 0, behavior: 'instant' });
