@@ -21,6 +21,7 @@
       background: linear-gradient(135deg, #0a0a0a 10%, #1c1c1c 60%, #222 100%);
       color: var(--light-gray);
       scroll-behavior: smooth;
+      overflow-x: hidden;
     }
 
     header {
@@ -41,6 +42,7 @@
       width: 180px;
       height: auto;
       margin-bottom: 1rem;
+      filter: drop-shadow(0 0 10px rgba(255, 213, 79, 0.4));
     }
 
     .sr-only {
@@ -246,26 +248,24 @@
     <p>Handcrafted with heart and a touch of glow</p>
   </footer>
 
-  <!-- Fix: Prevent auto-jump & improve VoiceOver navigation -->
+  <!-- Fix: Always load at the top of the page -->
   <script>
-    window.addEventListener('load', function() {
-      if (window.location.hash) {
-        const hash = window.location.hash;
-        history.replaceState(null, null, ' ');
-        window.scrollTo({ top: 0, behavior: 'instant' });
-        setTimeout(() => history.replaceState(null, null, hash), 100);
-      } else {
-        window.scrollTo({ top: 0, behavior: 'instant' });
-      }
+    window.addEventListener('beforeunload', () => {
+      window.scrollTo(0, 0);
     });
 
+    window.addEventListener('load', () => {
+      setTimeout(() => window.scrollTo(0, 0), 0);
+    });
+
+    // VoiceOver-friendly navigation fix
     document.querySelectorAll('nav a').forEach(link => {
       link.addEventListener('click', e => {
         e.preventDefault();
         const targetId = link.getAttribute('href').substring(1);
         const target = document.getElementById(targetId);
         if (target) {
-          target.focus({preventScroll:true});
+          target.focus({ preventScroll: true });
           target.scrollIntoView({ behavior: 'smooth' });
         }
       });
