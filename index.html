@@ -4,6 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Famous Seamus Lights</title>
+
+  <!-- This tiny script ensures scroll position resets BEFORE rendering -->
+  <script>
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
+  </script>
+
   <style>
     :root {
       --gold: #ffd54f;
@@ -248,14 +257,11 @@
     <p>Handcrafted with heart and a touch of glow</p>
   </footer>
 
-  <!-- Fix: Always load at the top of the page -->
+  <!-- Accessibility & smooth scroll -->
   <script>
-    window.addEventListener('beforeunload', () => {
-      window.scrollTo(0, 0);
-    });
-
-    window.addEventListener('load', () => {
-      setTimeout(() => window.scrollTo(0, 0), 0);
+    // Ensure scroll resets even after back/forward or refresh
+    window.addEventListener('pageshow', () => {
+      setTimeout(() => window.scrollTo(0, 0), 10);
     });
 
     // VoiceOver-friendly navigation fix
