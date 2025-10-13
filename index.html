@@ -23,6 +23,7 @@
       background-color: var(--dark);
       color: var(--light-gray);
       scroll-behavior: smooth;
+      scroll-padding-top: 70px; /* Helps with header visibility */
     }
 
     /* Event Banner */
@@ -76,6 +77,9 @@
       padding: 0.5rem;
       border-top: 2px solid var(--gold);
       border-bottom: 2px solid var(--gold);
+      position: sticky;
+      top: 0;
+      z-index: 999;
     }
 
     nav a {
@@ -228,8 +232,20 @@
     &copy; 2025 Famous Seamus Lights. All rights reserved.
   </footer>
 
-  <!-- Countdown + Auto-hide Script -->
+  <!-- Fix scroll + Countdown + Auto-hide Script -->
   <script>
+    // Always load from the top when the page first loads
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+    window.scrollTo({ top: 0, behavior: 'instant' });
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: 'instant' });
+      }, 100);
+    });
+
+    // Countdown + hide after event
     (function() {
       const eventDate = new Date("2025-10-17T00:00:00");
       const eventEnd = new Date("2025-10-18T00:00:00");
