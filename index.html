@@ -91,27 +91,32 @@
     }
 
     main {
-      max-width: 800px;
+      max-width: 900px;
       margin: 2rem auto;
-      padding: 1rem;
+      padding: 1.5rem;
       background-color: #111;
       border-radius: 8px;
+      box-shadow: 0 0 15px rgba(255, 213, 79, 0.1);
     }
 
     h2 {
       color: var(--gold);
       text-align: center;
+      margin-top: 0;
     }
 
-    .sr-only {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      margin: -1px;
-      overflow: hidden;
-      clip: rect(0,0,0,0);
-      border: 0;
+    .event-details {
+      background: rgba(255,255,255,0.05);
+      border-left: 4px solid var(--gold);
+      padding: 1rem 1.5rem;
+      border-radius: 6px;
+      margin-bottom: 2rem;
+    }
+
+    .event-details ul {
+      list-style-type: "🎵 ";
+      padding-left: 1.2rem;
+      color: var(--light-gray);
     }
 
     footer {
@@ -141,6 +146,7 @@
   <nav>
     <a href="#home">Home</a>
     <a href="#about">About Us</a>
+    <a href="#whitecane">White Cane Day</a>
     <a href="#contact">Contact</a>
   </nav>
 
@@ -150,6 +156,40 @@
       Every glowing jar is handmade by Seamus to bring warmth and beauty to any room. 
       Each piece is designed with care, built to last, and perfect for any home, gift, or event.
     </p>
+  </main>
+
+  <main id="whitecane">
+    <h2>White Cane Day 2025</h2>
+    <div class="event-details">
+      <p>
+        Join us in celebrating <strong>White Cane Day 2025</strong> at Acacia Park in downtown Colorado Springs on 
+        <strong>Friday, October 17, 2025</strong>! This annual event honors independence, safety, and mobility for 
+        individuals who are blind or visually impaired. It’s a day filled with community, music, and inspiration.
+      </p>
+
+      <p>
+        🗣️ <strong>Event Activities Include:</strong>
+      </p>
+      <ul>
+        <li>Inspirational speakers and poem readings</li>
+        <li>Three live bands performing throughout the day:
+          <ul>
+            <li>🎺 <strong>CSDB Pride Band</strong></li>
+            <li>🥁 <strong>CSDB Bulldog Band</strong></li>
+            <li>🎷 <strong>CSDB Staff Band</strong></li>
+          </ul>
+        </li>
+        <li>🎶 Background music between performances</li>
+        <li>🍔 Lunch will be served during the event</li>
+      </ul>
+
+      <p>
+        Don’t miss your chance to meet Seamus and his Aunt June at the <strong>Famous Seamus Lights booth</strong> — 
+        where you can pick up handmade mason-jar lights for just <strong>$5 each!</strong> 
+        All proceeds support the <strong>Lions Club</strong> and their mission to provide assistive technology 
+        for visually impaired individuals.
+      </p>
+    </div>
   </main>
 
   <main id="about">
@@ -195,6 +235,7 @@
       const eventEnd = new Date("2025-10-18T00:00:00");
       const countdown = document.getElementById("countdown");
       const banner = document.getElementById("eventBanner");
+      const whiteCaneSection = document.getElementById("whitecane");
 
       function updateCountdown() {
         const now = new Date();
@@ -202,6 +243,7 @@
 
         if (now >= eventEnd) {
           banner.style.display = "none";
+          whiteCaneSection.style.display = "none";
           return;
         }
 
