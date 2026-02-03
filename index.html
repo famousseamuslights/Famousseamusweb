@@ -3,7 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Famous Seamus Lights</title>
+  <title>Famous Seamus Lights - Handcrafted Mason-Jar Fairy Lights</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Handcrafted mason-jar fairy lights by Famous Seamus. All proceeds support the Lions Club's assistive technology programs for visually impaired individuals.">
+  <meta name="keywords" content="mason jar lights, fairy lights, Colorado Springs, Lions Club, handmade gifts, decorative lighting">
+  <meta name="author" content="Famous Seamus Lights">
+  
+  <!-- Open Graph for Social Sharing -->
+  <meta property="og:title" content="Famous Seamus Lights - Handcrafted Mason-Jar Creations">
+  <meta property="og:description" content="Beautiful handmade mason-jar lights supporting the Lions Club">
+  <meta property="og:image" content="logo.png">
+  <meta property="og:type" content="website">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png">
+  
   <style>
     :root {
       --gold: #ffdf4f;
@@ -12,273 +27,534 @@
       --violet: #a388ff;
       --dark: #0a0a0a;
       --light-gray: #eeeeee;
-      --banner-bg: #d32f2f;
-      --banner-text: #ffffff;
+      --focus-color: #64ffda;
     }
 
-    html, body {
+    /* Global Reset */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 80px;
+    }
+
+    body {
       margin: 0;
       padding: 0;
-      font-family: "Segoe UI", Arial, sans-serif;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       background-color: var(--dark);
       color: var(--light-gray);
-      scroll-behavior: smooth;
-      scroll-padding-top: 70px; /* Helps with header visibility */
+      line-height: 1.6;
     }
 
-    /* Event Banner */
-    .event-banner {
-      background-color: var(--banner-bg);
-      color: var(--banner-text);
-      text-align: center;
-      padding: 1rem;
-      font-size: 1.25rem;
+    /* Skip to Content Link - Critical Accessibility Feature */
+    .skip-link {
+      position: absolute;
+      top: -60px;
+      left: 10px;
+      background-color: var(--gold);
+      color: var(--dark);
+      padding: 12px 20px;
+      text-decoration: none;
       font-weight: bold;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+      border-radius: 4px;
+      z-index: 10000;
+      transition: top 0.3s;
     }
 
-    .countdown {
-      font-size: 1.1rem;
-      margin-top: 0.4rem;
-      font-weight: normal;
-      color: #fff8e1;
+    .skip-link:focus {
+      top: 10px;
+      outline: 3px solid var(--focus-color);
+      outline-offset: 2px;
     }
 
+    /* Header Styles */
     header {
       text-align: center;
-      padding: 2rem;
+      padding: 2.5rem 1rem;
       background: linear-gradient(to right, var(--amber), var(--gold));
       color: var(--dark);
     }
 
     header img.logo {
       width: 180px;
+      height: auto;
       margin-bottom: 1rem;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     header h1 {
       margin: 0;
-      font-size: 2.5rem;
+      font-size: clamp(1.8rem, 5vw, 2.5rem);
+      font-weight: 700;
     }
 
     header p {
       margin: 0.5rem 0 0;
-      font-size: 1.2rem;
+      font-size: clamp(1rem, 3vw, 1.2rem);
       font-style: italic;
     }
 
+    /* Navigation */
     nav {
-      display: flex;
-      justify-content: center;
       background-color: var(--dark);
-      padding: 0.5rem;
-      border-top: 2px solid var(--gold);
-      border-bottom: 2px solid var(--gold);
+      border-top: 3px solid var(--gold);
+      border-bottom: 3px solid var(--gold);
       position: sticky;
       top: 0;
       z-index: 999;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    nav li {
+      margin: 0;
     }
 
     nav a {
+      display: block;
       color: var(--gold);
       text-decoration: none;
-      margin: 0 1rem;
+      padding: 1rem 1.5rem;
       font-weight: bold;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 3px;
+      background-color: var(--aqua);
+      transition: all 0.3s ease;
+      transform: translateX(-50%);
     }
 
     nav a:hover,
     nav a:focus {
       color: var(--aqua);
+      background-color: rgba(100, 255, 218, 0.1);
     }
 
+    nav a:hover::after,
+    nav a:focus::after {
+      width: 80%;
+    }
+
+    nav a:focus {
+      outline: 3px solid var(--focus-color);
+      outline-offset: -3px;
+    }
+
+    /* Main Content Area */
     main {
       max-width: 900px;
       margin: 2rem auto;
-      padding: 1.5rem;
+      padding: 0 1rem;
+    }
+
+    section {
+      padding: 2rem;
       background-color: #111;
       border-radius: 8px;
-      box-shadow: 0 0 15px rgba(255, 213, 79, 0.1);
-    }
-
-    h2 {
-      color: var(--gold);
-      text-align: center;
-      margin-top: 0;
-    }
-
-    .event-details {
-      background: rgba(255,255,255,0.05);
-      border-left: 4px solid var(--gold);
-      padding: 1rem 1.5rem;
-      border-radius: 6px;
+      box-shadow: 0 4px 15px rgba(255, 213, 79, 0.15);
       margin-bottom: 2rem;
     }
 
-    .event-details ul {
-      list-style-type: "🎵 ";
-      padding-left: 1.2rem;
-      color: var(--light-gray);
+    /* Section Headings */
+    h2 {
+      color: var(--gold);
+      margin-top: 0;
+      margin-bottom: 1.5rem;
+      font-size: clamp(1.5rem, 4vw, 2rem);
+      border-bottom: 2px solid var(--gold);
+      padding-bottom: 0.5rem;
     }
 
+    /* Lists */
+    ul {
+      padding-left: 1.5rem;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    /* Emphasized Text */
+    strong {
+      color: var(--aqua);
+      font-weight: 600;
+    }
+
+    /* Links */
+    a {
+      color: var(--aqua);
+      transition: color 0.3s, border-color 0.3s;
+    }
+
+    a:hover {
+      color: var(--gold);
+    }
+
+    a:focus {
+      outline: 3px solid var(--focus-color);
+      outline-offset: 2px;
+      border-radius: 2px;
+    }
+
+    /* Contact Links */
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .contact-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--aqua);
+      text-decoration: none;
+      font-size: 1.1rem;
+      padding: 0.75rem 1rem;
+      background-color: rgba(100, 255, 218, 0.1);
+      border-radius: 6px;
+      border: 2px solid transparent;
+      transition: all 0.3s ease;
+      width: fit-content;
+    }
+
+    .contact-link:hover,
+    .contact-link:focus {
+      background-color: rgba(100, 255, 218, 0.2);
+      border-color: var(--aqua);
+      color: var(--gold);
+      transform: translateX(5px);
+    }
+
+    .contact-link:focus {
+      outline: 3px solid var(--focus-color);
+      outline-offset: 2px;
+    }
+
+    /* Pricing Box */
+    .pricing-box {
+      background: rgba(255, 255, 255, 0.05);
+      border-left: 4px solid var(--gold);
+      padding: 1.5rem;
+      border-radius: 6px;
+      margin: 1.5rem 0;
+    }
+
+    .pricing-box ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .pricing-box li {
+      padding-left: 1.5rem;
+      position: relative;
+      margin-bottom: 0.75rem;
+    }
+
+    .pricing-box li::before {
+      content: '💡';
+      position: absolute;
+      left: 0;
+    }
+
+    /* Styles Box */
+    .styles-box {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .style-card {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 1.5rem;
+      border-radius: 8px;
+      border: 2px solid rgba(255, 213, 79, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .style-card:hover,
+    .style-card:focus-within {
+      border-color: var(--gold);
+      box-shadow: 0 4px 12px rgba(255, 213, 79, 0.3);
+      transform: translateY(-5px);
+    }
+
+    .style-card h3 {
+      color: var(--gold);
+      margin-top: 0;
+      font-size: 1.3rem;
+    }
+
+    /* Footer */
     footer {
       text-align: center;
-      padding: 1rem;
-      border-top: 1px solid var(--gold);
-      margin-top: 2rem;
-      font-size: 0.9rem;
+      padding: 2rem 1rem;
+      border-top: 2px solid var(--gold);
+      margin-top: 3rem;
+      font-size: 0.95rem;
+      background-color: #0d0d0d;
+    }
+
+    footer p {
+      margin: 0.5rem 0;
+    }
+
+    /* Screen Reader Only Text */
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border-width: 0;
+    }
+
+    /* Mobile Responsiveness */
+    @media (max-width: 600px) {
+      nav ul {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      nav a {
+        padding: 0.75rem 1rem;
+        text-align: center;
+      }
+
+      section {
+        padding: 1.5rem 1rem;
+      }
+
+      .styles-box {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-links {
+        align-items: stretch;
+      }
+
+      .contact-link {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+
+    /* High Contrast Mode Support */
+    @media (prefers-contrast: high) {
+      :root {
+        --gold: #ffed4e;
+        --aqua: #00ffcc;
+      }
+
+      nav a:focus,
+      a:focus,
+      .contact-link:focus,
+      .skip-link:focus {
+        outline-width: 4px;
+      }
+    }
+
+    /* Reduced Motion Support */
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
     }
   </style>
 </head>
 <body>
-  <!-- Special Event Banner -->
-  <div class="event-banner" id="eventBanner">
-    🎉 All jars are <strong>$5</strong> at White Cane Day 2025! 🎉<br>
-    📅 October 17, 2025 – Acacia Park, Colorado Springs, CO.<br>
-    Seamus and his Aunt June will be selling them at a huge discount!<br>
-    <div class="countdown" id="countdown"></div>
-  </div>
+  <!-- Skip to Content Link for Screen Readers -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <header>
-    <img src="logo.png" alt="Famous Seamus Lights logo showing a mason jar wrapped in fairy lights" class="logo">
+  <!-- Header -->
+  <header role="banner">
+    <img 
+      src="logo.png" 
+      alt="Famous Seamus Lights logo featuring a glowing mason jar wrapped in fairy lights" 
+      class="logo"
+      width="180"
+      height="180"
+      loading="eager"
+    >
     <h1>Famous Seamus Lights</h1>
     <p>Handcrafted Mason-Jar Fairy-Light Creations</p>
   </header>
 
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#about">About Us</a>
-    <a href="#whitecane">White Cane Day</a>
-    <a href="#contact">Contact</a>
+  <!-- Navigation -->
+  <nav role="navigation" aria-label="Main navigation">
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About Us</a></li>
+      <li><a href="#styles">Styles & Pricing</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
   </nav>
 
-  <main id="home">
-    <h2>Welcome</h2>
-    <p>
-      Every glowing jar is handmade by Seamus to bring warmth and beauty to any room. 
-      Each piece is designed with care, built to last, and perfect for any home, gift, or event.
-    </p>
-  </main>
-
-  <main id="whitecane">
-    <h2>White Cane Day 2025</h2>
-    <div class="event-details">
+  <!-- Main Content -->
+  <main id="main-content" role="main">
+    <!-- Home Section -->
+    <section id="home" aria-labelledby="welcome-heading">
+      <h2 id="welcome-heading">Welcome to Famous Seamus Lights</h2>
       <p>
-        Join us in celebrating <strong>White Cane Day 2025</strong> at Acacia Park in downtown Colorado Springs on 
-        <strong>Friday, October 17, 2025</strong>! This annual event honors independence, safety, and mobility for 
-        individuals who are blind or visually impaired. It’s a day filled with community, music, and inspiration.
+        Every glowing jar is handmade by Seamus to bring warmth and beauty to any room. 
+        Each piece is designed with care, built to last, and perfect for any home, gift, or special event.
+      </p>
+      <p>
+        These unique fairy-light creations add a magical touch to bedrooms, living spaces, outdoor patios, 
+        weddings, and parties. They're not just decorations—they're conversation pieces that light up any space 
+        with charm and personality.
+      </p>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" aria-labelledby="about-heading">
+      <h2 id="about-heading">About Us</h2>
+      <p>
+        Seamus crafts each fairy-light jar with love, creativity, and attention to detail. What started as a 
+        personal hobby has grown into a small business with a big heart—<strong>all proceeds support the 
+        Lions Club</strong> to help visually impaired individuals access life-changing assistive technology.
+      </p>
+      <p>
+        Every jar you purchase directly contributes to providing tools like screen readers, magnifiers, 
+        and Braille devices to those who need them most. When you buy a Famous Seamus Light, you're not just 
+        getting a beautiful handmade product—you're making a real difference in someone's life.
+      </p>
+    </section>
+
+    <!-- Styles & Pricing Section -->
+    <section id="styles" aria-labelledby="styles-heading">
+      <h2 id="styles-heading">Styles & Pricing</h2>
+      <p>
+        Famous Seamus Lights are available in two beautiful styles, each designed to fit your aesthetic 
+        and brighten your space:
       </p>
 
+      <div class="styles-box">
+        <div class="style-card">
+          <h3>✨ White Lights</h3>
+          <p>
+            Classic and elegant, these white fairy lights offer a clean, timeless look that complements 
+            any decor. Perfect for minimalist spaces, weddings, or creating a soft, calming ambiance.
+          </p>
+        </div>
+
+        <div class="style-card">
+          <h3>🌈 Multicolored Lights</h3>
+          <p>
+            Bright, vibrant, and fun! These multicolored lights bring energy and personality to any room. 
+            Great for kids' rooms, parties, or anyone who loves a pop of color.
+          </p>
+        </div>
+      </div>
+
+      <div class="pricing-box" role="region" aria-labelledby="pricing-heading">
+        <h3 id="pricing-heading">Pricing</h3>
+        <ul>
+          <li><strong>$10 per jar</strong> (standard tabletop version)</li>
+          <li><strong>+$10 add-on</strong> for outdoor shepherd hook with secure mounting hardware</li>
+        </ul>
+        <p>
+          <strong>Important Note:</strong> At this time, shipping is not available. All purchases must be made 
+          in person at local events or by arrangement. <a href="#contact">Contact us</a> to coordinate pickup 
+          or discuss availability at upcoming events.
+        </p>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" aria-labelledby="contact-heading">
+      <h2 id="contact-heading">Get in Touch</h2>
       <p>
-        🗣️ <strong>Event Activities Include:</strong>
+        Have questions about our handcrafted lights? Want to place an order or find out where we'll be next? 
+        We'd love to hear from you!
       </p>
-      <ul>
-        <li>Inspirational speakers and poem readings</li>
-        <li>Three live bands performing throughout the day:
-          <ul>
-            <li>🎺 <strong>CSDB Pride Band</strong></li>
-            <li>🥁 <strong>CSDB Bulldog Band</strong></li>
-            <li>🎷 <strong>CSDB Staff Band</strong></li>
-          </ul>
-        </li>
-        <li>🎶 Background music between performances</li>
-        <li>🍔 Lunch will be served during the event</li>
-      </ul>
 
-      <p>
-        Don’t miss your chance to meet Seamus and his Aunt June at the <strong>Famous Seamus Lights booth</strong> — 
-        where you can pick up handmade mason-jar lights for just <strong>$5 each!</strong> 
-        All proceeds support the <strong>Lions Club</strong> and their mission to provide assistive technology 
-        for visually impaired individuals.
-      </p>
-    </div>
+      <div class="contact-links">
+        <a href="tel:3033497092" class="contact-link" aria-label="Call us at 303-349-7092">
+          <span aria-hidden="true">📞</span>
+          <span>Phone: (303) 349-7092</span>
+        </a>
+        
+        <a href="mailto:famousseamuslights@gmail.com" class="contact-link" aria-label="Email us at famousseamuslights@gmail.com">
+          <span aria-hidden="true">📧</span>
+          <span>Email: famousseamuslights@gmail.com</span>
+        </a>
+      </div>
+    </section>
   </main>
 
-  <main id="about">
-    <h2>About Us</h2>
-    <p>
-      Seamus crafts fairy-light jars with love and creativity. All money earned supports 
-      the Lions Club to help visually impaired people get assistive technology.
-    </p>
-    <p>
-      Jars are available in two styles:
-      <ul>
-        <li>✨ White jars – classic and clean look</li>
-        <li>🌈 Multicolored jars – bright and vibrant</li>
-      </ul>
-    </p>
-    <p>
-      Pricing:
-      <ul>
-        <li>$25 per jar (standard)</li>
-        <li>+$10 add-on for hanging option</li>
-      </ul>
-      <strong>Note:</strong> At this time, shipping is not available. 
-      Purchases must be made in person at events.
-    </p>
-  </main>
-
-  <main id="contact">
-    <h2>Contact</h2>
-    <p>
-      📞 Phone: <a href="tel:3033497092">303-349-7092</a><br>
-      📧 Email: <a href="mailto:famousseamuslights@gmail.com">famousseamuslights@gmail.com</a>
-    </p>
-  </main>
-
-  <footer>
-    &copy; 2025 Famous Seamus Lights. All rights reserved.
+  <!-- Footer -->
+  <footer role="contentinfo">
+    <p>&copy; 2025 Famous Seamus Lights. All rights reserved.</p>
+    <p>Proudly supporting the <strong>Lions Club</strong> and their mission to empower visually impaired individuals.</p>
   </footer>
 
-  <!-- Fix scroll + Countdown + Auto-hide Script -->
+  <!-- Accessibility & Scroll Management Script -->
   <script>
-    // Always load from the top when the page first loads
+    // Prevent scroll restoration to ensure page loads at top
     if ('scrollRestoration' in history) {
       history.scrollRestoration = 'manual';
     }
-    window.scrollTo({ top: 0, behavior: 'instant' });
-    window.addEventListener('load', () => {
-      setTimeout(() => {
-        window.scrollTo({ top: 0, behavior: 'instant' });
-      }, 100);
+
+    // Ensure page loads at the top
+    window.addEventListener('load', function() {
+      window.scrollTo(0, 0);
     });
 
-    // Countdown + hide after event
-    (function() {
-      const eventDate = new Date("2025-10-17T00:00:00");
-      const eventEnd = new Date("2025-10-18T00:00:00");
-      const countdown = document.getElementById("countdown");
-      const banner = document.getElementById("eventBanner");
-      const whiteCaneSection = document.getElementById("whitecane");
-
-      function updateCountdown() {
-        const now = new Date();
-        const distance = eventDate - now;
-
-        if (now >= eventEnd) {
-          banner.style.display = "none";
-          whiteCaneSection.style.display = "none";
-          return;
+    // Smooth scroll polyfill for older browsers
+    document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+      anchor.addEventListener('click', function(e) {
+        const targetId = this.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+        
+        if (targetElement) {
+          e.preventDefault();
+          targetElement.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+          
+          // Set focus to the target section for screen reader users
+          targetElement.setAttribute('tabindex', '-1');
+          targetElement.focus();
         }
-
-        if (distance <= 0 && now < eventEnd) {
-          countdown.textContent = "🎉 Today’s the day! Visit Seamus and Aunt June at Acacia Park! 🎉";
-          return;
-        }
-
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-        countdown.textContent = `⏳ ${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds until White Cane Day!`;
-      }
-
-      updateCountdown();
-      setInterval(updateCountdown, 1000);
-    })();
+      });
+    });
   </script>
 </body>
 </html>
