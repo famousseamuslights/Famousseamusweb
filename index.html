@@ -13,18 +13,18 @@
   <!-- Open Graph for Social Sharing -->
   <meta property="og:title" content="Famous Seamus Lights - Handcrafted Mason-Jar Creations">
   <meta property="og:description" content="Beautiful handmade mason-jar lights supporting the Lions Club">
-  <meta property="og:image" content="logo.png">
+  <!-- TODO: Replace with your actual deployed domain if you set up a custom domain -->
+  <meta property="og:image" content="https://famousseamuslights.github.io/Famousseamusweb/logo.png">
   <meta property="og:type" content="website">
   
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png">
+  <!-- TODO: Add a favicon.png to the repo, then uncomment the line below -->
+  <!-- <link rel="icon" type="image/png" href="favicon.png"> -->
   
   <style>
     :root {
       --gold: #ffdf4f;
       --amber: #ffb300;
       --aqua: #64ffda;
-      --violet: #a388ff;
       --dark: #0a0a0a;
       --light-gray: #eeeeee;
       --focus-color: #64ffda;
@@ -190,12 +190,12 @@
       padding-bottom: 0.5rem;
     }
 
-    /* Lists */
-    ul {
+    /* Lists (scoped to main to avoid bleeding into nav) */
+    main ul {
       padding-left: 1.5rem;
     }
 
-    li {
+    main li {
       margin-bottom: 0.5rem;
     }
 
@@ -395,6 +395,63 @@
         scroll-behavior: auto !important;
       }
     }
+
+    /* Print Styles */
+    @media print {
+      body {
+        background-color: #fff;
+        color: #000;
+      }
+
+      header {
+        background: none;
+        border-bottom: 2px solid #000;
+      }
+
+      nav, .skip-link {
+        display: none;
+      }
+
+      section {
+        background-color: #fff;
+        box-shadow: none;
+        border: 1px solid #ccc;
+      }
+
+      h2 {
+        color: #000;
+        border-bottom-color: #000;
+      }
+
+      strong {
+        color: #000;
+      }
+
+      a {
+        color: #000;
+        text-decoration: underline;
+      }
+
+      .contact-link {
+        background: none;
+        border: none;
+        padding: 0.25rem 0;
+        color: #000;
+      }
+
+      footer {
+        border-top-color: #000;
+        background-color: #fff;
+      }
+
+      .style-card {
+        border-color: #ccc;
+      }
+
+      .pricing-box {
+        border-left-color: #000;
+      }
+    }
   </style>
 </head>
 <body>
@@ -402,10 +459,12 @@
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <!-- Header -->
-  <header role="banner">
-    <img 
-      src="logo.png" 
-      alt="Famous Seamus Lights logo featuring a glowing mason jar wrapped in fairy lights" 
+  <header>
+    <!-- TODO: logo.png is 1.37 MB at 1024x1024 but displayed at 180x180.
+         Resize to ~360x360 (2x for retina) and compress, or convert to WebP. -->
+    <img
+      src="logo.png"
+      alt="Famous Seamus Lights logo featuring a glowing mason jar wrapped in fairy lights"
       class="logo"
       width="180"
       height="180"
@@ -416,7 +475,7 @@
   </header>
 
   <!-- Navigation -->
-  <nav role="navigation" aria-label="Main navigation">
+  <nav aria-label="Main navigation">
     <ul>
       <li><a href="#home">Home</a></li>
       <li><a href="#about">About Us</a></li>
@@ -426,7 +485,7 @@
   </nav>
 
   <!-- Main Content -->
-  <main id="main-content" role="main">
+  <main id="main-content">
     <!-- Home Section -->
     <section id="home" aria-labelledby="welcome-heading">
       <h2 id="welcome-heading">Welcome to Famous Seamus Lights</h2>
@@ -506,7 +565,7 @@
       </p>
 
       <div class="contact-links">
-        <a href="tel:3033497092" class="contact-link" aria-label="Call us at 303-349-7092">
+        <a href="tel:+13033497092" class="contact-link" aria-label="Call us at 303-349-7092">
           <span aria-hidden="true">📞</span>
           <span>Phone: (303) 349-7092</span>
         </a>
@@ -520,37 +579,32 @@
   </main>
 
   <!-- Footer -->
-  <footer role="contentinfo">
-    <p>&copy; 2025 Famous Seamus Lights. All rights reserved.</p>
+  <footer>
+    <p>&copy; <span id="copyright-year">2025</span> Famous Seamus Lights. All rights reserved.</p>
     <p>Proudly supporting the <strong>Lions Club</strong> and their mission to empower visually impaired individuals.</p>
   </footer>
 
-  <!-- Accessibility & Scroll Management Script -->
+  <!-- Accessibility & Navigation Script -->
   <script>
-    // Prevent scroll restoration to ensure page loads at top
-    if ('scrollRestoration' in history) {
-      history.scrollRestoration = 'manual';
+    // Dynamic copyright year
+    var yearEl = document.getElementById('copyright-year');
+    if (yearEl) {
+      yearEl.textContent = new Date().getFullYear();
     }
 
-    // Ensure page loads at the top
-    window.addEventListener('load', function() {
-      window.scrollTo(0, 0);
-    });
-
-    // Smooth scroll polyfill for older browsers
+    // Smooth scroll with focus management for screen reader users
     document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
       anchor.addEventListener('click', function(e) {
-        const targetId = this.getAttribute('href').substring(1);
-        const targetElement = document.getElementById(targetId);
-        
+        var targetId = this.getAttribute('href').substring(1);
+        var targetElement = document.getElementById(targetId);
+
         if (targetElement) {
           e.preventDefault();
           targetElement.scrollIntoView({
             behavior: 'smooth',
             block: 'start'
           });
-          
-          // Set focus to the target section for screen reader users
+
           targetElement.setAttribute('tabindex', '-1');
           targetElement.focus();
         }
